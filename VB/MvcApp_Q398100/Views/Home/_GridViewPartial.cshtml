@@ -1,0 +1,23 @@
+﻿@using DevExpress.Web.Mvc.UI;
+@using DevExpress.Web.Mvc;
+@Html.DevExpress().GridView(settings => {
+    settings.Name = "dxGridView";
+    settings.KeyFieldName = "ProductID";
+    settings.CallbackRouteValues = new { Controller = "Home", Action = "GridViewPartial" };
+
+    settings.Settings.ShowGroupButtons = false;
+
+     settings.Columns.Add("ProductID");
+    settings.Columns.Add("ProductName");
+    settings.Columns.Add("CategoryID").GroupIndex = 0;
+    settings.Columns.Add("Discontinued", MVCxGridViewColumnType.CheckBox);
+
+    settings.Settings.ShowGroupPanel = true;
+    settings.SetGroupRowContentTemplateContent(c => {
+        var link = String.Format("<a onclick='ExpandCollapseRow({1})'; href='javascript:void(0)'>Expand/Collapse Row: {0}</a>", c.GroupText, c.VisibleIndex);
+
+        var group = String.Format("{0}", link);
+        ViewContext.Writer.Write(group);
+    });
+
+}).Bind(Model).GetHtml()
