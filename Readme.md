@@ -9,7 +9,7 @@
 <!-- default file list end -->
 # How to use the the link to expand and collapse GridView groups
 <!-- run online -->
-**[[Run Online]](https://codecentral.devexpress.com/e3988)**
+**[[Run Online]](https://codecentral.devexpress.com/e3988/)**
 <!-- run online end -->
 
 
