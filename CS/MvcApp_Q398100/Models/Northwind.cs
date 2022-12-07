@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Collections;
-using DevExpress.Web.ASPxGridView;
+using DevExpress.Web;
 using MvcApp_Q398100.Models;
 
 public static class NorthwindDataProvider {
